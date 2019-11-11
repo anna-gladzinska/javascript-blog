@@ -5,13 +5,18 @@
 $color-light: #fff;
 $color-dark: #444;
 
-$font-logo: 'Sacramento', cursive;
-$font-header: 'Oswald', sans-serif;
-$font-text: 'Source Sans Pro', sans-serif;
+$font-logo: 'Sacramento',
+cursive;
+$font-header: 'Oswald',
+sans-serif;
+$font-text: 'Source Sans Pro',
+sans-serif;
 
 /* Global */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -34,6 +39,7 @@ body {
   text-transform: uppercase;
   font-family: $font-header;
   font-weight: 600;
+
   span {
     text-transform: none;
     font-weight: 400;
@@ -54,12 +60,15 @@ body {
 
 .posts {
   flex: 2 0 0;
+  position: relative;
+  height: 660px;
 }
 
-.sidebar, .posts {
+.sidebar,
+.posts {
   background: $color-light;
   margin-right: 10px;
-  padding: 40px;
+  padding: 20px 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
 }
@@ -80,6 +89,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
   .active {
     font-weight: bold;
   }
@@ -102,9 +112,16 @@ body {
 /* Post */
 
 .post {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  transition: linear .5s;
+
   &.active {
-    display: block;
+    opacity: 1;
+    z-index: 1;
   }
 }
 
@@ -114,7 +131,32 @@ body {
 
 .post-tags {
   display: flex;
+
   p {
     margin: 0 10px 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .sidebar {
+    flex: 100% 0 0;
+    margin: 0 0 10px 0;
+  }
+
+  .posts {
+    flex: 100% 0 0;
+    overflow: scroll;
+    margin: 0 0 10px 0;
+  }
+
+  .list {
+    li {
+      display: inline-block;
+      margin: 0 20px 0 0;
+    }
   }
 }

@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 /* Variables */
 /* Global */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -47,12 +49,15 @@ body {
 .posts {
   -ms-flex: 2 0 0px;
       flex: 2 0 0;
+  position: relative;
+  height: 660px;
 }
 
-.sidebar, .posts {
+.sidebar,
+.posts {
   background: #fff;
   margin-right: 10px;
-  padding: 40px;
+  padding: 20px 40px;
   border: 1px solid #444;
   border-radius: 5px;
 }
@@ -88,11 +93,17 @@ body {
 
 /* Post */
 .post {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  transition: linear .5s;
 }
 
 .post.active {
-  display: block;
+  opacity: 1;
+  z-index: 1;
 }
 
 .post-author {
@@ -106,5 +117,27 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .sidebar {
+    -ms-flex: 100% 0 0px;
+        flex: 100% 0 0;
+    margin: 0 0 10px 0;
+  }
+  .posts {
+    -ms-flex: 100% 0 0px;
+        flex: 100% 0 0;
+    overflow: scroll;
+    margin: 0 0 10px 0;
+  }
+  .list li {
+    display: inline-block;
+    margin: 0 20px 0 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
