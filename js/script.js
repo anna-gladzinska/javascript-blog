@@ -184,7 +184,7 @@
         html = html + linkHTML;
 
         /* [NEW] check if this link is NOT already in allTags */
-        if (!allTags.hasOwnProperty(tag)) {
+        if (!Object.prototype.hasOwnProperty.call(allTags, tag)) {
           /* [NEW] add generated code to allTags array */
           allTags[tag] = 1;
         } else {
@@ -305,7 +305,7 @@
       /* get author from data-author attribute */
       const articleAuthor = article.getAttribute('data-author');
 
-      if (!allAuthors.hasOwnProperty(articleAuthor)) {
+      if (!Object.prototype.hasOwnProperty.call(allAuthors, author)) {
         /* [NEW] add generated code to allAuthors array */
         allAuthors[articleAuthor] = 1;
       } else {
