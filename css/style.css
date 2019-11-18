@@ -123,6 +123,35 @@ body {
   margin: 0 10px 0 0;
 }
 
+.tags li {
+  display: inline-block;
+}
+
+.tag-size-1 {
+  font-size: 14px;
+  color: #78794F;
+}
+
+.tag-size-2 {
+  font-size: 18px;
+  color: #EC883C;
+}
+
+.tag-size-3 {
+  font-size: 22px;
+  color: #D8523E;
+}
+
+.tag-size-4 {
+  font-size: 26px;
+  color: #6D2339;
+}
+
+.tag-size-5 {
+  font-size: 28px;
+  color: #321325;
+}
+
 @media (max-width: 767px) {
   .wrapper {
     -ms-flex-wrap: wrap;
